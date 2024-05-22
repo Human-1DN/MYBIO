@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sparepart Management</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Sparepart Management</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Machine</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Tahun</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Stock</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Login Form -->
+    <div class="container mt-5">
+        <h2>Login</h2>
+        <form>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" id="username" placeholder="Enter username">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter password">
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+    </div>
+
+    <!-- Dashboard -->
+    <div class="container mt-5" id="dashboard" style="display: none;">
+        <h2>Dashboard</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nama Part</th>
+                    <th>Serial Number</th>
+                    <th>Jumlah Stok</th>
+                    <th>Harga per Item</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Part A</td>
+                    <td>SN001</td>
+                    <td>10</td>
+                    <td>$10</td>
+                </tr>
+                <tr>
+                    <td>Part B</td>
+                    <td>SN002</td>
+                    <td>5</td>
+                    <td>$15</td>
+                </tr>
+                <!-- Add more rows for other spare parts -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Handle form submission
+            $("form").submit(function (e) {
+                e.preventDefault();
+                var username = $("#username").val();
+                var password = $("#password").val();
+
+                // Perform login validation here
+                // For simplicity, let's assume the login is successful
+                if (username === "admin" && password === "password") {
+                    // Show the dashboard
+                    $("#dashboard").show();
+                } else {
+                    alert("Invalid username or password. Please try again.");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
